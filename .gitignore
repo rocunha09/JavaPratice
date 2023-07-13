@@ -1,0 +1,28 @@
+# Arquivos de compilação
+*.class
+*.jar
+/bin/
+
+# Arquivos de configuração do IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Arquivos de saída de compilação
+/target/
+
+# Arquivos de dependências Maven
+/.m2/
+
+# Arquivos de logs
+*.log
+
+# Arquivos de build do Gradle
+build/
+.gradle/
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
