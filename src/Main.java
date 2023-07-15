@@ -3,9 +3,9 @@ import models.Node;
 import java.util.LinkedList;
 
 public class Main {
-
-	public static void main(String[] args) {
-		
+	
+	public static void useList()
+	{
 		List<String> lst = new List<>();
 		
 		lst.add("1");
@@ -48,6 +48,20 @@ public class Main {
 		System.out.println(java_lst.size());
 		System.out.println(java_lst.toString());
 		
+	}
+
+	/**
+	 * todas as estruturas de dados fazem reuso da classe Node por praticidade 
+	 * de forma a não precisar criar várias models para testar.
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		/*
+		 * usando lista encadeada criada manualmente e usando lista encadeada do pacote java.utils
+		 */
+		//useList();
+		
 				
+		
 	}
 }
