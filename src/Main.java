@@ -1,9 +1,11 @@
 import models.List;
+import models.Node;
+import java.util.LinkedList;
 
 public class Main {
 
 	public static void main(String[] args) {
-
+		
 		List<String> lst = new List<>();
 		
 		lst.add("1");
@@ -21,6 +23,31 @@ public class Main {
 		lst.removeById(2);
 		System.out.println(lst.size());
 		System.out.println(lst.toString());
+		
+		System.out.println("");
+		System.out.println("");
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		//https://docs.oracle.com/javase/8/docs/api/java/util/List.html
+		LinkedList<String> java_lst = new LinkedList<>();
+		
+		java_lst.add("1");
+		java_lst.add("2");
+		java_lst.add("3");
+		java_lst.add("4");
+		
+		System.out.println(java_lst.get(0));
+		System.out.println(java_lst.get(2));
+		System.out.println(java_lst.toString());
+		System.out.println("--------------------------");
+		System.out.println(java_lst.isEmpty());
+		System.out.println(java_lst.size());
+		System.out.println("--------------------------");
+		java_lst.remove(2);
+		System.out.println(java_lst.size());
+		System.out.println(java_lst.toString());
+		
+				
 	}
-
 }

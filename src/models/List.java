@@ -65,6 +65,7 @@ public class List<T> {
 		return temp;
 	}
 	
+	
 	public T get(int index)	{
 		return getNode(index).getContent();
 	}
