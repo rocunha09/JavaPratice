@@ -1,13 +1,13 @@
 package models;
 
-public class Queue<T> {
-	private Node<T> top;
+public class MyStack<T> {
+private Node<T> top;
 	
-	public T get() {
+	public T peek() {
 		return this.top.getContent();
 	}
 	
-	public void enqueue(T content) {
+	public void push(T content) {
 		Node<T> newItem = new Node<T>(content);
 		if (this.top == null) {
 			this.top = newItem;
@@ -17,7 +17,7 @@ public class Queue<T> {
 		this.top = newItem;
 	}
 	
-	public T dequeue() {
+	public T pop() {
 		Node<T> old;
 		
 		if (isEmpty())
@@ -53,7 +53,7 @@ public class Queue<T> {
 		String str;
 	
 		temp = this.top;	
-		str = " Queue \n";
+		str = " Stack \n";
 		for (int count = 0; count < this.size(); count++) {
 			str += " [Item = " + temp + "\t|\t" + temp.getContent() + "\t|\t" + temp.getNext() + " ]\n";
 			temp = temp.getNext();

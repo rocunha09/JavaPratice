@@ -2,7 +2,8 @@ package models;
 
 public class Node<T> {
 	private T content;
-	private Node next;
+	private Node<T> next;
+	private Node<T> prev;
 	
 	public Node(T content) {
 		super();
@@ -15,12 +16,20 @@ public class Node<T> {
 	public void setContent(T content) {
 		this.content = content;
 	}
-	public Node getNext() {
+	public Node<T> getNext() {
 		return next;
 	}
 	
-	public void setNext (Node node) {
+	public void setNext (Node<T> node) {
 		this.next = node;
+	}
+
+	public Node<T> getPrev() {
+		return prev;
+	}
+
+	public void setPrev(Node<T> prev) {
+		this.prev = prev;
 	}
 
 	/*@Override

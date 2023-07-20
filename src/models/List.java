@@ -1,10 +1,8 @@
 package models;
 
-import java.util.Iterator;
-
 public class List<T> {
 	
-	private Node<T> head;
+	protected Node<T> head;
 	
 	public List() {
 		this.head = null;
@@ -44,13 +42,13 @@ public class List<T> {
 		}
 	}
 	
-	private void IndexValidation(int index) {
+	protected void IndexValidation(int index) {
 		if (index > this.size()) {
 			throw new IndexOutOfBoundsException("segfault...");
 		}
 	}
 	
-	private Node<T> getNode(int index) {
+	protected Node<T> getNode(int index) {
 		int count = 0;
 		Node<T> temp;
 		
@@ -80,9 +78,9 @@ public class List<T> {
 			
 			return temp.getContent();
 		}
-		
 		temp2 = this.getNode(index - 1);
 		temp2.setNext(temp.getNext());
+		temp.setNext(null);
 		
 		return temp.getContent(); 
 	}
@@ -101,7 +99,4 @@ public class List<T> {
 
 		return str;
 	}
-	
-	
-	
 }
