@@ -2,9 +2,11 @@ import models.List;
 import models.MyStack;
 import models.DoublyLinkedList;
 import models.Node;
-import models.Queue;
+import models.MyQueue;
 
 import java.util.LinkedList;
+import java.util.Stack;
+import java.util.Queue;
 
 public class Main {
 	
@@ -116,10 +118,94 @@ public class Main {
 		System.out.println("");
 		
 		
+		
+		
 		//Stack está em java.util.stack
 		//https://docs.oracle.com/javase/8/docs/api/java/util/Stack.html
-		//LinkedList<String> java_lst = new LinkedList<>();
+		Stack<String> Stk = new Stack<>();
 		
+		Stk.push("e");
+		Stk.push("d");
+		Stk.push("c");
+		Stk.push("b");
+		Stk.push("a");
+		
+		System.out.println(Stk.peek());
+		System.out.println(Stk.toString());
+		System.out.println("--------------------------");
+		System.out.println(Stk.isEmpty());
+		System.out.println(Stk.size());
+		System.out.println("--------------------------");
+		Stk.pop();
+		System.out.println(Stk.isEmpty());
+		System.out.println(Stk.size());
+		
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println(Stk.toString());
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println("");
+		
+	}
+	
+	public static void useQueue() {
+		MyQueue<String> que = new MyQueue<>();
+		
+		que.enqueue("a");
+		que.enqueue("b");
+		que.enqueue("c");
+		que.enqueue("d");
+		que.enqueue("e");
+		
+		System.out.println(que.get());
+		System.out.println(que.toString());
+		System.out.println("--------------------------");
+		System.out.println(que.isEmpty());
+		System.out.println(que.size());
+		System.out.println("--------------------------");
+		que.dequeue();
+		System.out.println(que.isEmpty());
+		System.out.println(que.size());
+		
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println(que.toString());
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println("");
+		
+		
+		Queue<String> Que = new LinkedList<>();
+		
+		Que.add("a");
+		Que.add("b");
+		Que.add("c");
+		Que.add("d");
+		Que.add("e");
+		
+		System.out.println(Que.peek()); //peek retorna sem remover
+		System.out.println(Que.toString());
+		System.out.println("--------------------------");
+		System.out.println(Que.isEmpty());
+		System.out.println(Que.size());
+		System.out.println("--------------------------");
+		Que.poll(); //retorna removendo
+		System.out.println(Que.isEmpty());
+		System.out.println(Que.size());
+		
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println(Que.toString());
+		System.out.println("");
+		System.out.println("--------------------------");
+		System.out.println("");
+		System.out.println("");
 	}
 	
 	
@@ -140,7 +226,7 @@ public class Main {
 		//criando e usando uma MyStack
 		//useStack();
 		
-		//Criando e usando uma Queue
+		//Criando e usando uma MyQueue
 		//useQueue();
 		
 	}

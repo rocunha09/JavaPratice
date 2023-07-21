@@ -1,20 +1,29 @@
 package models;
 
-public class Queue<T> {
-	private Node<T> top;
+public class MyQueue<T> {
+	private Node<T> init;
+	private Node<T> end;
 	
 	public T get() {
-		return this.top.getContent();
+		return this.init.getContent();
 	}
 	
 	public void enqueue(T content) {
 		Node<T> newItem = new Node<T>(content);
-		if (this.top == null) {
-			this.top = newItem;
+
+		if (this.init == null) {
+			this.init = newItem;
+			this.end = newItem;
 			return;
 		}
-		newItem.setNext(this.top);
-		this.top = newItem;
+		if (this.size() == 1)
+		{
+			this.end = newItem;
+			this.init.setNext(end);
+			return;
+		}
+		this.end.setNext(newItem);
+		this.end = newItem;
 	}
 	
 	public T dequeue() {
@@ -22,9 +31,8 @@ public class Queue<T> {
 		
 		if (isEmpty())
 			return null;
-		old = this.top;
-		top = this.top.getNext();
-		top.setNext(this.top.getNext());
+		old = this.init;
+		this.init = this.init.getNext();
 		old.setNext(null);
 		
 		return old.getContent();
@@ -34,7 +42,7 @@ public class Queue<T> {
 		int len = 0;
 		Node<T> temp;
 		
-		temp = this.top;
+		temp = this.init;
 		while(temp != null) {
 			len++;
 			temp = temp.getNext();
@@ -44,7 +52,7 @@ public class Queue<T> {
 	}
 	
 	public boolean isEmpty() {
-		return this.top == null ? true : false;
+		return this.init == null ? true : false;
 	}
 	
 	@Override
@@ -52,8 +60,8 @@ public class Queue<T> {
 		Node<T> temp;
 		String str;
 	
-		temp = this.top;	
-		str = " Queue \n";
+		temp = this.init;	
+		str = " MyQueue \n";
 		for (int count = 0; count < this.size(); count++) {
 			str += " [Item = " + temp + "\t|\t" + temp.getContent() + "\t|\t" + temp.getNext() + " ]\n";
 			temp = temp.getNext();
