@@ -26,7 +26,7 @@
 - [ ] subList
 
 ### Array
-- [ ] length
+- [x] length
 - [ ] get
 - [ ] set
 - [ ] sort
@@ -36,14 +36,15 @@
 - [ ] toString
 
 ## praticando manipulação de texto e data
-- [ ] copiar texto
-- [ ] comparar texto
-- [ ] procurar letra
-- [ ] trocar letra
-- [ ] trocar parte do texto
-- [ ] split
-- [ ] converter digitos textuais para numéricos
-- [ ] converter digitos numéricos para textuais 
+- [x] percorrer texto
+- [x] copiar texto
+- [x] comparar texto
+- [x] procurar letra
+- [x] trocar letra
+- [x] trocar parte do texto
+- [x] split
+- [x] converter digitos textuais para numéricos
+- [x] converter digitos numéricos para textuais 
 - [ ] obter data e imprimir diversos formatos de data
 - [ ] realizar contagem de tempo utilizando data
 - [ ] aritmética de tempo com data
