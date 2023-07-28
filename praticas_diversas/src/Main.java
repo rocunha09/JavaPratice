@@ -1,14 +1,17 @@
-import models.List;
-import models.MyStack;
-import models.DoublyLinkedList;
-import models.Node;
-import models.MyQueue;
-
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Locale;
-import java.util.Stack;
 import java.util.Queue;
 import java.util.Scanner;
+import java.util.Stack;
+import java.util.stream.Collectors;
+
+import models.DoublyLinkedList;
+import models.List;
+import models.MyQueue;
+import models.MyStack;
+import models.Produto;
+import models.Triangle;
 
 public class Main {
 	
@@ -56,6 +59,62 @@ public class Main {
 		System.out.println(java_lst.size());
 		System.out.println(java_lst.toString());
 		
+		System.out.println("");
+		System.out.println("");
+		
+		ArrayList<String> list_txt = new ArrayList<>();
+
+		list_txt.add("Zequinha");
+		list_txt.add("Toinho");
+		list_txt.add("Milzinhu");
+		list_txt.add("Nininhu");
+		
+		for(String name : list_txt)
+		{
+			System.out.println(name);
+		}
+		System.out.println("");
+		
+		list_txt.remove(2);
+		list_txt.remove("Toinho");
+		list_txt.add(2, "Lilinho");
+		
+		for(String name : list_txt)
+		{
+			System.out.println(name);
+		}
+		System.out.println("");
+		
+		//usando predicado para remoção e este é criado através de uma expressão lambda
+		list_txt.removeIf(x -> x.charAt(0) == 'L');
+
+		list_txt.add("Toinho");
+		list_txt.add("Milzinhu");
+
+		//usando stram para filtrar a lista
+		//nao funcioa, estudarei mais arte
+		/*
+		 
+		List<String> result = (List<String>) list_txt
+				.stream()
+	            .filter(x -> x.charAt(1) == 'i')
+	            .map(String::valueOf) // Converte os caracteres em strings
+	            .collect(Collectors.toList());
+		
+		
+		//não sei como imprimir ainda, o modo padrão  da erro
+		 for (int i = 0; i < result.size(); i++) {
+	            String elemento = result.get(i);
+	            System.out.println(elemento);
+	        }
+		System.out.println("");
+		
+		*/
+		
+		//usando  stream, filter, lambda, para busca de um dado
+		String gato = list_txt.stream().filter(x -> x.charAt(0) == 'M').findFirst().orElse(null);
+		System.out.println(gato);
+		System.out.println("");
 	}
 
 	public static void useDoublyList()
@@ -294,31 +353,113 @@ public class Main {
 		System.out.println(b);
 		System.out.println(str);
 		
+		sc.close();
 	}
 	
-	/**
-	 * todas as estruturas de dados fazem reuso da classe Node por praticidade 
-	 * de forma a não precisar criar várias models para testar.
-	 * @param args
-	 */
+	public static void useTriangle() {
+		Scanner sc2 = new Scanner(System.in);
+		
+		Triangle x = new Triangle();
+		Triangle y = new Triangle();
+		
+		System.out.println("entre com lados do triangulo x: ");
+		x.setA(sc2.nextDouble());
+		x.setB(sc2.nextDouble());
+		x.setC(sc2.nextDouble());
+		
+		System.out.println("entre com lados do triangulo y: ");
+		y.setA(sc2.nextDouble());
+		y.setB(sc2.nextDouble());
+		y.setC(sc2.nextDouble());
+		
+		sc2.close();
+		
+		System.out.println();
+		System.out.println("os lados do triângulo X são: " 
+				+ x.getA()  + " " + x.getB()  + " " + x.getC()  + " ");
+		System.out.println("A área do triângulo X é: " + x.getArea());
+		
+		System.out.println();
+		System.out.println("os lados do triângulo Y são: " 
+				+ y.getA()  + " " + y.getB()  + " " + y.getC()  + " ");
+		System.out.println("A área do triângulo Y é: " + y.getArea());
+		
+		
+		
+	}
+	
+	public static void useProduto() {
+		Scanner sc = new Scanner(System.in);
+		
+		Produto p1 = new Produto();
+		
+		System.out.print("entre com o nome do produto:  ");
+		p1.setNome(sc.nextLine());
+		
+		System.out.print("entre com o preço do produto:  ");
+		p1.setPreco(sc.nextDouble());
+		
+		System.out.print("entre com a quantidade do produto:  ");
+		int quantidade = sc.nextInt();
+		p1.adicionarProdutos(quantidade);
+		
+		System.out.println(p1.toString());
+		
+		p1.removerProdutos(1);
+		System.out.println(p1.toString());
+		
+		sc.close();
+	}
+	
+	public static void useMatrix() {
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int matrix[][] = new int[n][n];
+		int count_neg = 0;
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				matrix[i][j] = sc.nextInt();
+				if (matrix[i][j] < 0)
+					count_neg++;
+			}
+		}
+		
+		sc.close();
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				System.out.print("[" + matrix[i][j] + "]");
+			}
+			System.out.println();
+		}
+		System.out.println();
+		System.out.println("quantidade de negativos: " + count_neg);
+		System.out.println();
+		
+		System.out.println("Diagonal principal: ");
+		
+		for (int i = 0; i < matrix.length; i++) {
+			for (int j = 0; j < matrix[i].length; j++) {
+				if (i == j)
+					System.out.print("[" + matrix[i][j] + "]");
+			}
+		}
+		System.out.println();
+
+	}
+	
 	public static void main(String[] args) {
-		/*
-		 * usando lista encadeada criada manualmente e usando lista encadeada do pacote java.utils
-		 */
+
 		//useList();
-		
-		//falta fazer reapontamento do prev
 		//useDoublyList();
-		
-		//criando e usando uma MyStack
 		//useStack();
-		
-		//Criando e usando uma MyQueue
 		//useQueue();
-		
-		useStringFunctions();
-		
+		//useStringFunctions();
 		//useScanner();
+		//useTriangle();
+		//useProduto();
+		//useMatrix();
 		
 	}
 }
