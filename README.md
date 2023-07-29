@@ -10,30 +10,8 @@
 ### usar Set(HashSet) e Map(HashMap)
 - [ ] Set
 - [ ] Map
-
-## usar ArrayList e Array do java e seus métodos mais comuns
-
-### ArrayList
-- [ ] add
-- [ ] get
-- [ ] remove
-- [ ] size
-- [ ] clear
-- [ ] contains
-- [ ] indexOf
-- [ ] lastIndexOf
-- [ ] sort
-- [ ] subList
-
-### Array
-- [x] length
-- [ ] get
-- [ ] set
-- [ ] sort
-- [ ] clone
-- [ ] equals
-- [ ] hashCode
-- [ ] toString
+- [x] Enum
+- [x] Generics
 
 ## praticando manipulação de texto e data
 - [x] percorrer texto
@@ -55,4 +33,27 @@
 - [ ] stream de arquivos
 - [ ] comparação entre arquivos
 
-## próximos passos
+## próximo nível
+
+### p.o.o.
+- [x] Encapsulamento
+- [x] Herança
+- [x] Polimorfismo
+- [x] Classes Abstratas, Métodos Abstratos e Interface
+- [x] Upcasting, Downcasting
+- [ ] Composição
+
+### Outros tópicos
+- [ ] Funcional
+- [ ] Lambda
+
+## próximo nível
+
+### Acesso a banco de dados
+- [ ] Conexão
+- [ ] CRUD
+- [ ] DAO
+- [ ] DAOFactory
+- [ ] Transactions
+- [ ] JDBC
+- [ ] JPA/Hibernate
